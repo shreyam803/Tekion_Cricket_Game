@@ -1,3 +1,4 @@
+//PRINTING THE SCOREBOARD
 public class Scoreboard {
     public void scoreboard(Teams team1, Teams team2){
         System.out.println("Score of "+ team1.getName()+" is " + team1.getScore() + " with " + team1.getWickets() + " wickets.");

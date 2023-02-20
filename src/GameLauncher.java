@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class GameLauncher {
     Scanner sc = new Scanner(System.in);
+    //START OF THE GAME
     public void startGame() throws InterruptedException{
         System.out.println("Enter the number of overs:");
         int numOfOvers = sc.nextInt();
