@@ -22,7 +22,7 @@ public class GameLauncher {
         team2.setName(name2);
 
         Teams batting = match.toss(team1,team2);
-        batting.setInning(1);
+
         match.play(numOfOvers, batting,0);
 
         Teams bowling;
@@ -33,7 +33,7 @@ public class GameLauncher {
         else{
             bowling = team1;
         }
-        bowling.setInning(2);
+
         match.play(numOfOvers, bowling, batting.getScore()+1);
 
         Scoreboard scores = new Scoreboard();

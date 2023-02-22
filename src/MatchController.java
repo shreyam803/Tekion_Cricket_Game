@@ -30,32 +30,33 @@ public class MatchController {
         int wicket=0;
         int score = 0;
         System.out.println("Scoreboard of team " + team.getName() + " :");
-        for(int i=1;i<=numOfOvers;i++){
+        for(int i=1;i<=numOfOvers && wicket <= 10;i++){
             System.out.println("Score of over " + i);
-            for(int j=0;j<6;j++){
+            for(int j=0;j<6 && wicket <= 10;j++){
                 team.over[j] = (int)(Math.random()*8);
 
                 if(team.over[j] == 7){
                     System.out.print("W" + " ");
                     wicket++;
-                    team.setWickets(wicket);
+
                     continue;
                 }
                 System.out.print(team.over[j] + " ");
                 score += team.over[j];
 
-                team.setScore(score);
-                if(wicket == 10) break;
-                if(team.getInning() == 2 && target < score) {
+                if(target!= 0 && target < score) {
                     System.out.println("");
-                    return;
+                    break;
                 }
             }
-            Thread.sleep(500);
+            if(target!= 0 && target < score)
+                break;
+
+            Thread.sleep(1000);
             System.out.println("");
-            if(wicket == 10) break;
         }
         Thread.sleep(1500);
-
+        team.setWickets(wicket);
+        team.setScore(score);
     }
 }
