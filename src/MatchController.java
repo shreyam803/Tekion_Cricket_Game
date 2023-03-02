@@ -34,7 +34,7 @@ public class MatchController {
             System.out.println("Score of over " + (i+1));
             for(int j=0;j<6 && wicket<10;j++){
                 team.over[j] = (int)(Math.random()*8);
-
+//hello
                 if(team.over[j] == 7){
                     System.out.print("W" + " ");
                     wicket++;
